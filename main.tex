@@ -1,0 +1,43 @@
+% We use part-chapter-section structure.
+\documentclass{myclass}
+
+% We load customized commands.
+\usepackage{mypackage}
+
+\begin{document}
+
+%------------------------------------------------------------------------------
+% Front matters.
+%------------------------------------------------------------------------------
+
+\frontmatter
+
+\maketitle
+
+% Table of contents.
+\tableofcontents
+
+% Preface.
+\subimport{./}{preface.tex}
+\addcontentsline{toc}{chapter}{Preface}
+
+%------------------------------------------------------------------------------
+% Main matters.
+%------------------------------------------------------------------------------
+
+\mainmatter
+
+% All chapters are in separated files.
+% We include them here.
+
+\subimport{intro/}{main.tex}
+
+%------------------------------------------------------------------------------
+% Back matters.
+%------------------------------------------------------------------------------
+
+\backmatter
+
+\printindex
+
+\end{document}

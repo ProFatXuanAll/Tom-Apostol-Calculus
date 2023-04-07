@@ -1,0 +1,216 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{myclass}[2023/04/06 My book class]
+
+\LoadClass[a4paper,11pt]{book}
+
+%------------------------------------------------------------------------------
+% Load packages.
+%------------------------------------------------------------------------------
+
+% We use T1 as font encoding.
+% This correctly shows code points within the range `0x00-0xFF'.
+\RequirePackage[T1]{fontenc}
+
+% We use UTF-8 as text encoding.
+\RequirePackage[utf8]{inputenc}
+
+% We set page layout to the same as the book `Linear Algebra (4e) by Stephen H. Friedberg'.
+\RequirePackage[paperwidth=160mm,paperheight=240mm,left=4mm,right=4mm,top=20mm,bottom=10mm]{geometry}
+
+% This includes package `amsfonts'.
+% This package MUST be loaded BEFORE the package `mathtools'.
+\RequirePackage{amssymb}
+
+% This package includes the package `amsmath' and fixes bugs for `amsmath'.
+\RequirePackage{mathtools}
+
+% This package MUST be loaded AFTER the packages `amsmath' and `mathtools'.
+\RequirePackage{amsthm}
+
+% This package provides customization on page header and footer.
+\RequirePackage{fancyhdr}
+
+% This package provides LaTex 3 command customization utilities.
+\RequirePackage{xparse}
+
+% We separate files into parts and chapters, and we import them with relative file path.
+\RequirePackage{import}
+
+% We create index for important people / theorems.
+\RequirePackage{makeidx}
+
+% This package adjusts character spacing at margins.
+\RequirePackage{microtype}
+
+% This package fixes bugs for the listing environments `enumerate', `itemize', and `description'.
+\RequirePackage{enumitem}
+
+% This package provides better quoting environment.
+\RequirePackage{dirtytalk}
+
+% This package parses lists inside the command `\newcommand'.
+\RequirePackage{listofitems}
+
+% This package provide a nice looking if-then-else structure and comparison functionalities.
+\RequirePackage{ifthen}
+
+% This package adds hyperlinks to labels and references.
+% This package MUST be loaded AFTER all packages and BEFORE the package `cleveref'.
+\RequirePackage{hyperref}
+
+% We reset chapter numbers for each part of the book.
+% This package MUST be loaded AFTER the package `hyperref'.
+\RequirePackage{chngcntr}
+
+% We capitalize type names of cross-references.
+% This package MUST be loaded after the package `hyperref'.
+% See `cleveref' for details.
+\RequirePackage[capitalize]{cleveref}
+
+%------------------------------------------------------------------------------
+% Set up `fancyhdr' package.
+%------------------------------------------------------------------------------
+
+% We use `fancy' page style.
+% All page style settings MUST be called AFTER the command `\pagestyle'.
+% See `fancyhdr' for details.
+\pagestyle{fancy}
+
+% We set page header height to `15pt' so that chapter and section titles can fit into page header.
+\setlength{\headheight}{15pt}
+
+% We change formatting for chapter and section marks.
+% We use `\markright' to make sure header use chapter information when section information is not available.
+% This is need for appendix.
+\renewcommand{\chaptermark}[1]{\markright{\textsf{\small Chap. \thechapter \quad #1}}}
+\renewcommand{\sectionmark}[1]{\markright{\textsf{\small Sec. \thesection \quad #1}}}
+
+% To customize page header, one first need to clean up page header settings.
+\fancyhead{}
+
+% We put page number on the left of page header.
+\fancyhead[L]{\textbf{\textsf{\small \thepage}}}
+
+% We put chapter and section information on the right of page header.
+\fancyhead[R]{\rightmark}
+
+% To customize page footer, one first need to clean up page footer settings.
+\fancyfoot{}
+
+% The `plain' page style is used for the first page of each chapter.
+% We reset the `plain' page style to make page number style consistent.
+\fancypagestyle{plain}{%
+  \fancyhf{}% clear all fields
+  \fancyfoot[C]{\textbf{\textsf{\small \thepage}}}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+%------------------------------------------------------------------------------
+% Set up `hyperref' package.
+%------------------------------------------------------------------------------
+
+\hypersetup{       % This macro come with `hyperref'.
+  colorlinks=true, % Color hyperlinks.
+  linkcolor=blue,  % Color local hyperlinks with blue.
+  urlcolor=cyan,   % Color url links with cyan.
+}
+
+%------------------------------------------------------------------------------
+% Set up chapter counter.
+%------------------------------------------------------------------------------
+
+% Chapter counter is reset within each part.
+\counterwithin*{chapter}{part}
+
+% We remove words and numbering in each part.
+\renewcommand{\partname}{}
+\renewcommand{\thepart}{}
+
+%------------------------------------------------------------------------------
+% Set up page style.
+%------------------------------------------------------------------------------
+
+% Author informations.
+\title{Notes on Calculus by Tom Apostol}
+\author{ProFatXuanAll}
+\date{\today}
+
+% Allow page break in the middle of multi-line equations.
+\allowdisplaybreaks
+
+%------------------------------------------------------------------------------
+% Set up theorem-like environments.
+%------------------------------------------------------------------------------
+
+% Text inside the body of theorem-like environments are set to Roman font.
+% Theorem-like environments share their counters, counters follow section and reset in every sections
+% (except for axioms, axioms counters are reset in each chapter).
+% Exercises has their owned counter.
+% Notes do not use counter.
+% See `amsthm' for details.
+\theoremstyle{definition}
+\newtheorem{ax}{Ax.}[chapter]
+\newtheorem{ac}{A.Cor.}[section]
+\newtheorem{ex}{Ex.}[section]
+\newtheorem{thm}{Thm.}[section]
+\newtheorem{cor}[thm]{Cor.}
+\newtheorem{defn}[thm]{Def.}
+\newtheorem{eg}[thm]{E.g.}
+\newtheorem{lem}[thm]{Lem.}
+\newtheorem{prop}[thm]{Prop.}
+\newtheorem{rmk}[thm]{Rmk.}
+\newtheorem*{note}{Note}
+
+%------------------------------------------------------------------------------
+% Set up `cleveref' package.
+%------------------------------------------------------------------------------
+
+% Define plural form for theorem-like environments.
+% See `cleveref' for details.
+\crefname{ax}{Ax.}{Ax.}
+\crefname{ac}{A.Cor.}{A.Cor.}
+\crefname{chapter}{Ch.}{Ch.}
+\crefname{cor}{Cor.}{Cor.}
+\crefname{defn}{Def.}{Def.}
+\crefname{eg}{E.g.}{E.g.}
+\crefname{ex}{Ex.}{Ex.}
+\crefname{lem}{Lem.}{Lem.}
+\crefname{note}{Note}{Notes}
+\crefname{prop}{Prop.}{Prop.}
+\crefname{rmk}{Rmk.}{Rmk.}
+\crefname{section}{Sec.}{Sec.}
+\crefname{thm}{Thm.}{Thm.}
+
+%------------------------------------------------------------------------------
+% Set up `enumerate' environment.
+%------------------------------------------------------------------------------
+
+% We make item label alphabets and be surrounded by parentheses.
+% See `enumitem' for details.
+\renewcommand{\labelenumi}{\textnormal{(}\alph{enumi}\textnormal{)}}
+% \renewcommand{\labelenumi}{\textnormal{\lparen}\alph{enumi}\textnormal{\rparen}}
+
+%------------------------------------------------------------------------------
+% Set up math style.
+%------------------------------------------------------------------------------
+
+% We use display style on inline math.
+\everymath{\displaystyle}
+
+%------------------------------------------------------------------------------
+% Define commands.
+%------------------------------------------------------------------------------
+
+% Formatting exercises section.
+\NewDocumentCommand{\exercisesection}{}{
+  \begin{center}
+    --- Exercises ---
+  \end{center}
+}
+
+%------------------------------------------------------------------------------
+% Set up `makeidx' package.
+%------------------------------------------------------------------------------
+
+% We create index for important people / theorems.
+\makeindex

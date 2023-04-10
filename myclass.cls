@@ -15,7 +15,7 @@
 \RequirePackage[utf8]{inputenc}
 
 % We set page layout to the same as the book `Linear Algebra (4e) by Stephen H. Friedberg'.
-\RequirePackage[paperwidth=160mm,paperheight=240mm,left=4mm,right=4mm,top=20mm,bottom=10mm]{geometry}
+\RequirePackage[paperwidth=160mm,paperheight=240mm,left=4mm,right=4mm,top=20mm,bottom=20mm]{geometry}
 
 % This includes package `amsfonts'.
 % This package MUST be loaded BEFORE the package `mathtools'.
@@ -85,17 +85,14 @@
 \renewcommand{\chaptermark}[1]{\markright{\textsf{\small Chap. \thechapter \quad #1}}}
 \renewcommand{\sectionmark}[1]{\markright{\textsf{\small Sec. \thesection \quad #1}}}
 
-% To customize page header, one first need to clean up page header settings.
-\fancyhead{}
+% To customize page header and footer, one first need to clean up page header and footer settings.
+\fancyhf{}
 
 % We put page number on the left of page header.
 \fancyhead[L]{\textbf{\textsf{\small \thepage}}}
 
 % We put chapter and section information on the right of page header.
 \fancyhead[R]{\rightmark}
-
-% To customize page footer, one first need to clean up page footer settings.
-\fancyfoot{}
 
 % The `plain' page style is used for the first page of each chapter.
 % We reset the `plain' page style to make page number style consistent.
@@ -214,3 +211,6 @@
 
 % We create index for important people / theorems.
 \makeindex
+
+% We define command \iindex so that we don't need to type the same index term twice.
+\NewDocumentCommand{\iindex}{m}{#1\index{#1}}

@@ -1,1 +1,231 @@
 \section{Exercises}\label{sec:1.1.4}
+
+\begin{ex}\label{1.1.4.1}
+  \begin{enumerate}
+    \item Modify the region in Figure 1.3 by assuming that the ordinate at each \(x\) is \(2 x^2\) instead of \(x^2\).
+          Draw the new figure.
+          Check through the principal steps in the foregoing section and find what effect this has on the calculation of the area.
+  \end{enumerate}
+  Do the same if the ordinate at each \(x\) is
+  \begin{enumerate}[resume]
+    \item \(3 x^2\).
+    \item \(\dfrac{1}{4} x^2\).
+    \item \(2 x^2 + 1\).
+    \item \(a x^2 + c\) where \(a > 0\) and \(c > 0\).
+  \end{enumerate}
+\end{ex}
+
+\begin{proof}[\pf{1.1.4.1}]
+  We first solve (e).
+  We have
+  \[
+    S_n = \dfrac{a b^3}{n^3} \pa{1^2 + 2^2 + \dots + n^2} + cb
+  \]
+  and
+  \[
+    s_n = \dfrac{a b^3}{n^3} \pa{1^2 + 2^2 + \dots + (n - 1)^2} + cb
+  \]
+  for every integer \(n \geq 1\).
+  Multiply both inequalities in \cref{eq:1.1.5} by \(\dfrac{a b^3}{n^3}\) and adding \(cb\) we obtain
+  \[
+    s_n < \dfrac{a b^3}{3} + cb < S_n
+  \]
+  for every integer \(n \geq 1\).
+  We assert that if \(A\) is any number which satisfies the inequalities
+  \[
+    s_n < A < S_n
+  \]
+  for every integer \(n \geq 1\), then \(A = \dfrac{a b^3}{3} + cb\).
+  By adding \(n^2\) to both sides of the leftmost inequality in \cref{eq:1.1.5} and multiplying by \(\dfrac{a b^3}{n^3}\), we obtain
+  \[
+    S_n - cb = \dfrac{a b^3}{n^3} \pa{1^2 + 2^2 + \dots + n^2} < \dfrac{a b^3}{3} + \dfrac{a b^3}{n}.
+  \]
+  Similarly, by subtracting \(n^2\) from both sides of the rightmost inequality in \cref{eq:1.1.5} and multiplying by \(\dfrac{a b^3}{n^3}\), we obtain
+  \[
+    \dfrac{a b^3}{3} - \dfrac{a b^3}{n} < \dfrac{a b^3}{n^3} \pa{1^2 + 2^2 + \dots + (n - 1)^2} = s_n - cb.
+  \]
+  Therefore, any number \(A\) satisfying \(s_n < A < S_n\) must also satisfy
+  \[
+    \dfrac{a b^3}{3} - \dfrac{a b^3}{n} < s_n - cb < A - cb < S_n - cb < \dfrac{a b^3}{3} + \dfrac{a b^3}{n}
+  \]
+  for every integer \(n \geq 1\).
+
+  Now there are three possibilities:
+  \[
+    A - cb > \dfrac{a b^3}{3}, \quad A - cb < \dfrac{a b^3}{3}, \quad A - cb = \dfrac{a b^3}{3}.
+  \]
+  Suppose for sake of contradiction that \(A - cb > \dfrac{a b^3}{3}\).
+  Then we would have
+  \[
+    A - cb - \dfrac{a b^3}{3} < \dfrac{a b^3}{n}
+  \]
+  for every integer \(n \geq 1\).
+  Since \(A - cb - \dfrac{a b^3}{3}\) is positive, we may divide both sides by \(A - cb - \dfrac{a b^3}{3}\) and then multiply by \(n\) to obtain the equivalent statement
+  \[
+    n < \dfrac{a b^3}{A - cb - a b^3 / 3}
+  \]
+  for every integer \(n \geq 1\).
+  But this inequality is obviously false when \(n \geq \dfrac{a b^3}{A - cb - a b^3 / 3}\).
+  Hence the inequality \(A - cb > \dfrac{a b^3}{3}\) leads to a contradiction.
+  By a similar argument, we can show that the inequality \(A - cb < \dfrac{a b^3}{3}\) also leads to a contradiction, and therefore we must have \(A - cb = \dfrac{a b^3}{3}\), or \(A = \dfrac{a b^3}{3} + cb\), as asserted.
+
+  Now we solve (a)(b)(c)(d).
+  \begin{enumerate}
+    \item We substitute \(a = 2\) and \(c = 0\) to obtain \(A = \dfrac{2 b^3}{3}\).
+    \item We substitute \(a = 3\) and \(c = 0\) to obtain \(A = b^3\).
+    \item We substitute \(a = \dfrac{1}{4}\) and \(c = 0\) to obtain \(A = \dfrac{1 b^3}{12}\).
+    \item We substitute \(a = 2\) and \(c = 1\) to obtain \(A = \dfrac{2 b^3}{3} + b\).
+  \end{enumerate}
+\end{proof}
+
+\begin{ex}\label{1.1.4.2}
+  Modify the region in Figure 1.3 by assuming that the ordinate at each \(x\) is \(x^3\) instead of \(x^2\).
+  Draw the new figure.
+  \begin{enumerate}
+    \item Use a construction similar to that illustrated in Figure 1.5 and show that the outer and inner sums \(S_n\) and \(s_n\) are given by
+          \[
+            S_n = \dfrac{b^4}{n^4} \pa{1^3 + 2^3 + \dots + n^3}, \quad s_n = \dfrac{b^4}{n^4} \pa{1^3 + 2^3 + \dots + (n - 1)^3}.
+          \]
+    \item Use the inequalities
+          (which can be proved by mathematical induction;
+          see \cref{sec:1.4.2})
+          \begin{equation}\label{eq:1.1.12}
+            1^3 + 2^3 + \dots + (n - 1)^3 < \dfrac{n^4}{4} < 1^3 + 2^3 + \dots + n^3
+          \end{equation}
+          to show that \(s_n < \dfrac{b^4}{4} < S_n\), for every \(n\), and prove that \(\dfrac{b^4}{4}\) is the only number which lies between \(s_n\) and \(S_n\) for every integer \(n \geq 1\).
+    \item What number takes the place of \(\dfrac{b^4}{4}\) if the ordinate at each \(x\) is \(ax^3 + c\)?
+  \end{enumerate}
+\end{ex}
+
+\begin{proof}[\pf{1.1.4.2}(a)]
+  At each point \(\dfrac{kb}{n}\) we construct the outer rectangle of altitude \(\pa{\dfrac{kb}{n}}^3\) where \(k\) takes the values \(k = 0, 1, \dots, n\).
+  The area of this rectangle is the product of its base and altitude and is equal to
+  \[
+    \pa{\dfrac{b}{n}} \pa{\dfrac{kb}{n}}^3 = \dfrac{b^4}{n^4} k^3.
+  \]
+  Since the \(k\)th outer rectangle has area \(\dfrac{b^4}{n^4} k^3\), we obtain the formula
+  \[
+    S_n = \dfrac{b^4}{n^4} (1^3 + 2^3 + \dots + n^3).
+  \]
+  In the same way we obtain a formula for \(s_n\) of all the inner rectangles:
+  \[
+    s_n = \dfrac{b^4}{n^4} (1^3 + 2^3 + \dots + (n - 1)^3).
+  \]
+\end{proof}
+
+\begin{proof}[\pf{1.1.4.2}(b)]
+  Multiply both inequalities in \cref{eq:1.1.12} by \(\dfrac{b^4}{n^4}\) we obtain
+  \[
+    s_n < \dfrac{b^4}{4} < S_n
+  \]
+  for every integer \(n \geq 1\).
+  We assert that if \(A\) is any number which satisfies the inequalities
+  \[
+    s_n < A < S_n
+  \]
+  for every integer \(n \geq 1\), then \(A = \dfrac{b^4}{4}\).
+  By adding \(n^3\) to both sides of the leftmost inequality in \cref{eq:1.1.12} and multiplying by \(\dfrac{b^4}{n^4}\), we obtain
+  \[
+    S_n = \dfrac{b^4}{n^4} \pa{1^3 + 2^3 + \dots + n^3} < \dfrac{b^4}{4} + \dfrac{b^4}{n}.
+  \]
+  Similarly, by subtracting \(n^3\) from both sides of the rightmost inequality in \cref{eq:1.1.12} and multiplying by \(\dfrac{b^4}{n^4}\), we obtain
+  \[
+    \dfrac{b^4}{4} - \dfrac{b^4}{n} < \dfrac{b^4}{n^4} \pa{1^3 + 2^3 + \dots + (n - 1)^3} = s_n.
+  \]
+  Therefore, any number \(A\) satisfying \(s_n < A < S_n\) must also satisfy
+  \[
+    \dfrac{b^4}{4} - \dfrac{b^4}{n} < s_n < A < S_n < \dfrac{b^4}{4} + \dfrac{b^4}{n}
+  \]
+  for every integer \(n \geq 1\).
+
+  Now there are three possibilities:
+  \[
+    A > \dfrac{b^4}{4}, \quad A < \dfrac{b^4}{4}, \quad A = \dfrac{b^4}{4}.
+  \]
+  Suppose for sake of contradiction that \(A > \dfrac{b^4}{4}\).
+  Then we would have
+  \[
+    A - \dfrac{b^4}{4} < \dfrac{b^4}{n}
+  \]
+  for every integer \(n \geq 1\).
+  Since \(A - \dfrac{b^4}{4}\) is positive, we may divide both sides by \(A - \dfrac{b^4}{4}\) and then multiply by \(n\) to obtain the equivalent statement
+  \[
+    n < \dfrac{b^4}{A - b^4 / 4}
+  \]
+  for every integer \(n \geq 1\).
+  But this inequality is obviously false when \(n \geq \dfrac{b^4}{A - b^4 / 4}\).
+  Hence the inequality \(A > \dfrac{b^4}{4}\) leads to a contradiction.
+  By a similar argument, we can show that the inequality \(A < \dfrac{b^4}{4}\) also leads to a contradiction, and therefore we must have \(A = \dfrac{b^4}{4}\), as asserted.
+\end{proof}
+
+\begin{proof}[\pf{1.1.4.2}(c)]
+  \(\dfrac{a b^4}{4} + bc\).
+\end{proof}
+
+\begin{ex}\label{1.1.4.3}
+  The inequalities \cref{eq:1.1.5,eq:1.1.12} are special cases of the more general inequalities
+  \begin{equation}\label{eq:1.1.13}
+    1^m + 2^m + \dots + (n - 1)^m < \dfrac{n^{m + 1}}{m + 1} < 1^m + 2^m + \dots + n^m
+  \end{equation}
+  that are valid for every integer \(n \geq 1\) and every integer \(m \geq 1\).
+  Assume the validity of \cref{eq:1.1.13} and generalize the results of \cref{1.1.4.2}.
+\end{ex}
+
+\begin{proof}[\pf{1.1.4.3}]
+  Assume that the ordinate at each \(x\) is \(x^m\).
+  At each point \(\dfrac{kb}{n}\) we construct the outer rectangle of altitude \(\pa{\dfrac{kb}{n}}^m\) where \(k\) takes the values \(k = 0, 1, \dots, n\).
+  The area of this rectangle is the product of its base and altitude and is equal to
+  \[
+    \pa{\dfrac{b}{n}} \pa{\dfrac{kb}{n}}^m = \dfrac{b^{m + 1}}{n^{m + 1}} k^m.
+  \]
+  Since the \(k\)th outer rectangle has area \(\dfrac{b^{m + 1}}{n^{m + 1}} k^m\), we obtain the formula
+  \[
+    S_n = \dfrac{b^{m + 1}}{n^{m + 1}} (1^m + 2^m + \dots + n^m).
+  \]
+  In the same way we obtain a formula for \(s_n\) of all the inner rectangles:
+  \[
+    s_n = \dfrac{b^{m + 1}}{n^{m + 1}} (1^m + 2^m + \dots + (n - 1)^m).
+  \]
+  Multiply both inequalities in \cref{eq:1.1.13} by \(\dfrac{b^{m + 1}}{n^{m + 1}}\) we obtain
+  \[
+    s_n < \dfrac{b^{m + 1}}{m + 1} < S_n
+  \]
+  for every integer \(n \geq 1\).
+  We assert that if \(A\) is any number which satisfies the inequalities
+  \[
+    s_n < A < S_n
+  \]
+  for every integer \(n \geq 1\), then \(A = \dfrac{b^{m + 1}}{m + 1}\).
+  By adding \(n^m\) to both sides of the leftmost inequality in \cref{eq:1.1.13} and multiplying by \(\dfrac{b^{m + 1}}{n^{m + 1}}\), we obtain
+  \[
+    S_n = \dfrac{b^{m + 1}}{n^{m + 1}} \pa{1^m + 2^m + \dots + n^m} < \dfrac{b^{m + 1}}{m + 1} + \dfrac{b^{m + 1}}{n}.
+  \]
+  Similarly, by subtracting \(n^m\) from both sides of the rightmost inequality in \cref{eq:1.1.13} and multiplying by \(\dfrac{b^{m + 1}}{n^{m + 1}}\), we obtain
+  \[
+    \dfrac{b^{m + 1}}{m + 1} - \dfrac{b^{m + 1}}{n} < \dfrac{b^{m + 1}}{n^{m + 1}} \pa{1^m + 2^m + \dots + (n - 1)^m} = s_n.
+  \]
+  Therefore, any number \(A\) satisfying \(s_n < A < S_n\) must also satisfy
+  \[
+    \dfrac{b^{m + 1}}{m + 1} - \dfrac{b^{m + 1}}{n} < s_n < A < S_n < \dfrac{b^{m + 1}}{m + 1} + \dfrac{b^{m + 1}}{n}
+  \]
+  for every integer \(n \geq 1\).
+
+  Now there are three possibilities:
+  \[
+    A > \dfrac{b^{m + 1}}{m + 1}, \quad A < \dfrac{b^{m + 1}}{m + 1}, \quad A = \dfrac{b^{m + 1}}{m + 1}.
+  \]
+  Suppose for sake of contradiction that \(A > \dfrac{b^{m + 1}}{m + 1}\).
+  Then we would have
+  \[
+    A - \dfrac{b^{m + 1}}{m + 1} < \dfrac{b^{m + 1}}{n}
+  \]
+  for every integer \(n \geq 1\).
+  Since \(A - \dfrac{b^{m + 1}}{m + 1}\) is positive, we may divide both sides by \(A - \dfrac{b^{m + 1}}{m + 1}\) and then multiply by \(n\) to obtain the equivalent statement
+  \[
+    n < \dfrac{b^{m + 1}}{A - b^{m + 1} / (m + 1)}
+  \]
+  for every integer \(n \geq 1\).
+  But this inequality is obviously false when \(n \geq \dfrac{b^{m + 1}}{A - b^{m + 1} / (m + 1)}\).
+  Hence the inequality \(A > \dfrac{b^{m + 1}}{m + 1}\) leads to a contradiction.
+  By a similar argument, we can show that the inequality \(A < \dfrac{b^{m + 1}}{m + 1}\) also leads to a contradiction, and therefore we must have \(A = \dfrac{b^{m + 1}}{m + 1}\), as asserted.
+\end{proof}

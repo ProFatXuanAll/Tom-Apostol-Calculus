@@ -209,17 +209,6 @@
 \renewcommand{\theequation}{\Roman{part}.\arabic{chapter}.\arabic{equation}}
 
 %------------------------------------------------------------------------------
-% Define commands.
-%------------------------------------------------------------------------------
-
-% Formatting exercises section.
-\NewDocumentCommand{\exercisesection}{}{
-  \begin{center}
-    --- Exercises ---
-  \end{center}
-}
-
-%------------------------------------------------------------------------------
 % Set up `makeidx' package.
 %------------------------------------------------------------------------------
 

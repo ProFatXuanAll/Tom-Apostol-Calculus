@@ -143,7 +143,7 @@
 \newtheorem{ex}{Ex.}[section]
 \newtheorem{thm}{Thm.}[chapter]
 % \newtheorem{cor}[thm]{Cor.}
-\newtheorem{defn}{Def.}[section]
+\newtheorem{defn}{Def.}[chapter]
 \newtheorem{eg}[defn]{E.g.}
 \newtheorem{lem}[thm]{Lem.}
 \newtheorem{prop}[thm]{Prop.}

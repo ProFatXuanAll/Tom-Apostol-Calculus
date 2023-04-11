@@ -113,17 +113,6 @@
 }
 
 %------------------------------------------------------------------------------
-% Set up chapter counter.
-%------------------------------------------------------------------------------
-
-% Chapter counter is reset within each part.
-\counterwithin*{chapter}{part}
-
-% We remove words and numbering in each part.
-\renewcommand{\partname}{}
-\renewcommand{\thepart}{}
-
-%------------------------------------------------------------------------------
 % Set up page style.
 %------------------------------------------------------------------------------
 
@@ -193,8 +182,15 @@
 % We use display style on inline math.
 \everymath{\displaystyle}
 
+%------------------------------------------------------------------------------
+% Set up book structure counters.
+%------------------------------------------------------------------------------
+
 % We format part number as roman number in uppercases.
 \renewcommand{\thepart}{\Roman{part}}
+
+% Chapter counter is reset within each part.
+\counterwithin*{chapter}{part}
 
 % We format chapter number as `part.chapter'.
 \renewcommand{\thechapter}{\Roman{part}.\arabic{chapter}}

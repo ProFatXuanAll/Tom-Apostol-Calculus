@@ -82,8 +82,8 @@
 % We change formatting for chapter and section marks.
 % We use `\markright' to make sure header use chapter information when section information is not available.
 % This is need for appendix.
-\renewcommand{\chaptermark}[1]{\markright{\textsf{\small Chap. \thechapter \quad #1}}}
-\renewcommand{\sectionmark}[1]{\markright{\textsf{\small Sec. \thesection \quad #1}}}
+\renewcommand{\chaptermark}[1]{\markright{\textsf{\small Chap. \textrm{\thechapter} \quad #1}}}
+\renewcommand{\sectionmark}[1]{\markright{\textsf{\small Sec. \textrm{\thesection} \quad #1}}}
 
 % To customize page header and footer, one first need to clean up page header and footer settings.
 \fancyhf{}
@@ -149,10 +149,10 @@
 \newtheorem{ax}{Ax.}[chapter]
 \newtheorem{ac}{A.Cor.}[section]
 \newtheorem{ex}{Ex.}[section]
-\newtheorem{thm}{Thm.}[section]
-\newtheorem{cor}[thm]{Cor.}
-\newtheorem{defn}[thm]{Def.}
-\newtheorem{eg}[thm]{E.g.}
+\newtheorem{thm}{Thm.}[chapter]
+% \newtheorem{cor}[thm]{Cor.}
+\newtheorem{defn}{Def.}[section]
+\newtheorem{eg}[defn]{E.g.}
 \newtheorem{lem}[thm]{Lem.}
 \newtheorem{prop}[thm]{Prop.}
 \newtheorem{rmk}[thm]{Rmk.}
@@ -184,8 +184,7 @@
 
 % We make item label alphabets and be surrounded by parentheses.
 % See `enumitem' for details.
-\renewcommand{\labelenumi}{\textnormal{(}\alph{enumi}\textnormal{)}}
-% \renewcommand{\labelenumi}{\textnormal{\lparen}\alph{enumi}\textnormal{\rparen}}
+\renewcommand{\labelenumi}{\textnormal{\lparen}\alph{enumi}\textnormal{\rparen}}
 
 %------------------------------------------------------------------------------
 % Set up math style.
@@ -193,6 +192,21 @@
 
 % We use display style on inline math.
 \everymath{\displaystyle}
+
+% We format part number as roman number in uppercases.
+\renewcommand{\thepart}{\Roman{part}}
+
+% We format chapter number as `part.chapter'.
+\renewcommand{\thechapter}{\Roman{part}.\arabic{chapter}}
+
+% We format section number as `part.chapter.section'.
+\renewcommand{\thesection}{\Roman{part}.\arabic{chapter}.\arabic{section}}
+
+% We display theorem tag as `part.chatper.section.theorem'.
+\renewcommand{\thethm}{\Roman{part}.\arabic{chapter}.\arabic{section}.\arabic{thm}}
+
+% We display equation tag as `part.chatper.equation'.
+\renewcommand{\theequation}{\Roman{part}.\arabic{chapter}.\arabic{equation}}
 
 %------------------------------------------------------------------------------
 % Define commands.

@@ -27,6 +27,9 @@
 % This package MUST be loaded AFTER the packages `amsmath' and `mathtools'.
 \RequirePackage{amsthm}
 
+% This package helps formatting table of content.
+\RequirePackage{tocloft}
+
 % This package provides customization on page header and footer.
 \RequirePackage{fancyhdr}
 
@@ -203,6 +206,13 @@
 
 % We display equation tag as `part.chatper.equation'.
 \renewcommand{\theequation}{\Roman{part}.\arabic{chapter}.\arabic{equation}}
+
+% Adjust title number width in table of content.
+\makeatletter
+\renewcommand{\numberline}[1]{%
+  \@cftbsnum #1\@cftasnum~\@cftasnumb%
+}
+\makeatother
 
 %------------------------------------------------------------------------------
 % Set up `makeidx' package.

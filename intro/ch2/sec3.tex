@@ -6,38 +6,38 @@
     A \subseteq B,
   \]
   whenever every element of \(A\) also belongs to \(B\).
-  We also say that \(A\) is \textbf{contained} in \(B\) or \(B\) \textbf{contains} \(A\).
+  We also say that \(A\) is \textbf{\iindex{contained}} in \(B\) or \(B\) \textbf{\iindex{contains}} \(A\).
   The relation \(\subseteq\) is referred to as \textbf{\iindex{set inclusion}}.
 
   The statement \(A \subseteq B\) does not rule out the possibility that \(B \subseteq A\).
-  In fact, we may have both \(A \subseteq B\) and \(B \subseteq A\), but this happens iff \(A\) and \(B\) have the same elements.
+  We may have both \(A \subseteq B\) and \(B \subseteq A\), but this happens iff \(A\) and \(B\) have the same elements.
   In other words,
   \[
     A = B \iff (A \subseteq B) \land (B \subseteq A).
   \]
-  This theorem is an immediate consequence of the foregoing definitions of equality and inclusion.
+  This theorem is an immediate consequence of the preceding definitions of equality and inclusion.
   If \(A \subseteq B\) but \(A \neq B\), then we say that \(A\) is a \textbf{\iindex{proper subset}} of \(B\);
   we indicate this by writing \(A \subset B\).
 \end{defn}
 
-\begin{defn}\label{defn:1.2.5}
-  In all our applications of set theory, we have a fixed set \(S\) given in advance, and we are concerned only with subsets of this given set.
+\begin{defn}[\iindex{universal set}]\label{defn:1.2.5}
+  In all our applications of set theory, we have a fixed set \(S\) given in advance and are concerned only with subsets of this given set.
   The underlying set \(S\) may vary from one application to another;
-  it will be referred to as the \textbf{\iindex{universal set}} of each particular discourse.
+  it will be referred to as the \textbf{universal set} of each particular discourse.
   The notation
   \[
-    \set{x \mid x \in S \text{ and } x \text{ satisfies } P}
+    \set{x \Mid x \in S \text{ and } x \text{ satisfies } P}
   \]
   will designate the set of all elements \(x\) in \(S\) which satisfy the property \(P\).
-  When the universal set to which we are referring is understood, we omit the reference to \(S\) and write simply \(\set{x \mid x \text{ satisfies } P}\).
-  This is read ``the set of all \(x\) such that \(x\) satisfies \(P\).''
+  When the universal set to which we refer is understood, we omit the reference to \(S\) and write simply \(\set{x \Mid x \text{ satisfies } P}\).
+  This is read as ``the set of all \(x\) such that \(x\) satisfies \(P\).''
   Sets designated in this way are said to be described by a defining property.
   Of course, the letter \(x\) is a dummy and may be replaced by any other convenient symbol.
 \end{defn}
 
-\begin{defn}\label{defn:1.2.6}
+\begin{defn}[\iindex{empty set}]\label{defn:1.2.6}
   It is possible for a set to contain no elements whatever.
-  This set is called the \textbf{\iindex{empty set}} or the \textbf{\iindex{void set}}, and will be denoted by the symbol \(\varnothing\).
+  This set is called the \textbf{empty set} or the \textbf{\iindex{void set}}, and will be denoted by the symbol \(\varnothing\).
   We will consider \(\varnothing\) to be a subset of every set.
   Some people find it helpful to think of a set as analogous to a container (such as a bag or a box) containing certain objects, its elements.
   The empty set is then analogous to an empty container.
@@ -47,13 +47,13 @@
   To avoid logical difficulties, we must distinguish between the element \(x\) and the set \(\set{x}\) whose only element is \(x\).
   (A box with a hat in it is conceptually distinct from the hat itself.)
   In particular, the empty set \(\varnothing\) is not the same as the set \(\set{\varnothing}\).
-  In fact, the empty set \(\varnothing\) contains no elements, whereas the set \(\set{\varnothing}\) has one element, \(\varnothing\).
-  (A box which contains an empty box is not empty.)
+  The empty set \(\varnothing\) contains no elements, whereas the set \(\set{\varnothing}\) has one element \(\varnothing\).
+  (A box that contains an empty box is not empty.)
   Sets consisting of exactly one element are sometimes called \textbf{\iindex{one-element sets}}.
 \end{note}
 
 \begin{note}
   Diagrams often help us visualize relations between sets.
-  \textbf{\iindex{Venn diagrams}} are useful for testing the validity of theorems in set theory or for suggesting methods to prove them.
+  \textbf{\iindex{Venn diagrams}} are useful for testing the validity of set theory theorems or suggesting methods to prove them.
   Of course, the proofs themselves must rely only on the definitions of the concepts and not on the diagrams.
 \end{note}

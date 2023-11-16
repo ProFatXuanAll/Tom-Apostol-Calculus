@@ -1,35 +1,35 @@
 \section{Unions, Intersections, Complements}\label{sec:1.2.4}
 
 \begin{defn}\label{defn:1.2.7}
-  From two given sets \(A\) and \(B\), we can form a new set called the \textbf{\iindex{union}} of \(A\) and \(B\).
+  From two given sets, \(A\) and \(B\), we can form a new set called the \textbf{\iindex{union}} of \(A\) and \(B\).
   This new set is denoted by the symbol
   \[
     A \cup B
   \]
   (read: ``\(A\) union \(B\)'')
-  and is defined as the set of those elements which are in \(A\), in \(B\), or in both.
+  and is defined as the set of elements in \(A\), \(B\), or both.
   That is to say, \(A \cup B\) is the set of all elements which belong to at least one of the sets \(A, B\).
 
   Similarly, the \textbf{\iindex{intersection}} of \(A\) and \(B\), denoted by
   \[
     A \cap B
   \]
-  (read: ``\(A\) intersection \(B\)'')
+  (read: ``\(A\) intersection \(B\)''),
   is defined as the set of those elements common to both \(A\) and \(B\).
-  Two sets \(A\) and \(B\) are said to be \textbf{\iindex{disjoint}} if \(A \cap B = \varnothing\).
+  Two sets, \(A\) and \(B\), are said to be \textbf{\iindex{disjoint}} if \(A \cap B = \varnothing\).
 
-  If \(A\) and \(B\) are sets, the \textbf{\iindex{difference}} \(A \setminus B\) (also called the \textbf{\iindex{complement} of \(B\) relative to \(A\)}\index{complement of ... relative to ...}) is defined to be the set of all elements of \(A\) which are not in \(B\).
+  If \(A\) and \(B\) are sets, the \textbf{\iindex{difference}} \(A \setminus B\) (also called the \textbf{\iindex{complement} of \(B\) relative to \(A\)} is defined as the set of all elements of \(A\) that are not in \(B\).
   Thus, by definition,
   \[
-    A \setminus B = \set{x \mid x \in A \text{ and } x \notin B}.
+    A \setminus B = \set{x \Mid x \in A \text{ and } x \notin B}.
   \]
 \end{defn}
 
 \begin{note}
-  The operations of union and intersection have many formal similarities to (as well as differences from) ordinary addition and multiplication of real numbers.
-  For example, since there is no question of order involved in the definitions of union and intersection, it follows that \(A \cup B = B \cup A\) and that \(A \cap B = B \cap A\).
-  That is to say, union and intersection are \textbf{\iindex{commutative}}\index{commutative of set} operations.
-  The definitions are also phrased in such a way that the operations are \textbf{\iindex{associative}}\index{associative of set}:
+  The operations of union and intersection have many formal similarities to (and differences from) ordinary addition and multiplication of real numbers.
+  For example, since no question of order is involved in the definitions of union and intersection, it follows that \(A \cup B = B \cup A\) and \(A \cap B = B \cap A\).
+  That is to say, union and intersection are \textbf{\iindex{commutative}} operations.
+  The definitions are also phrased in such a way that the operations are \textbf{\iindex{associative}}:
   \[
     (A \cup B) \cup C = A \cup (B \cup C) \quad \text{and} \quad (A \cap B) \cap C = A \cap (B \cap C).
   \]
@@ -39,15 +39,15 @@
 
 \begin{defn}\label{defn:1.2.8}
   We call a collection of sets a \textbf{\iindex{class}}.
-  Capital script letters \(\mathcal{A}, \mathcal{B}, \mathcal{C}, \dots\) are used to denote classes.
+  Capital script letters \(\mathcal{A}, \mathcal{B}, \mathcal{C}, \dots,\) are used to denote classes.
   The usual terminology and notation of set theory applies, of course, to classes.
   Thus, for example, \(A \in \mathcal{F}\) means that \(A\) is one of the sets in the class \(\mathcal{F}\), and \(\mathcal{A} \subseteq \mathcal{B}\) means that every set in \(\mathcal{A}\) is also in \(\mathcal{B}\), and so forth.
 \end{defn}
 
 \begin{defn}\label{defn:1.2.9}
-  The operations of union and intersection can be extended to finite or infinite collections of sets as follows:
+  The operations of union and intersection can be extended to \textbf{\iindex{finite}} or \textbf{\iindex{infinite}} collections of sets as follows:
   Let \(\mathcal{F}\) be a nonempty class of sets.
-  The union of all the sets in \(\mathcal{F}\) is defined as the set of those elements which belong to at least one of the sets in \(\mathcal{F}\) and is denoted by the symbol
+  The union of all the sets in \(\mathcal{F}\) is defined as the set of those elements that belong to at least one of the sets in \(\mathcal{F}\) and is denoted by the symbol
   \[
     \bigcup_{A \in \mathcal{F}} A.
   \]
@@ -55,15 +55,15 @@
   \[
     \bigcup_{A \in \mathcal{F}} A = \bigcup_{k = 1}^n A_k = A_1 \cup A_2 \cup \dots \cup A_n.
   \]
-  Similarly, the intersection of all the sets in \(\mathcal{F}\) is defined to be the set of those elements which belong to every one of the sets in \(\mathcal{F}\);
+  Similarly, the intersection of all the sets in \(\mathcal{F}\) is defined to be the set of those elements that belong to every one of the sets in \(\mathcal{F}\);
   it is denoted by the symbol
   \[
-    \bigcap_{A \in \mathcal{F}} A
+    \bigcap_{A \in \mathcal{F}} A.
   \]
   For finite collections (as above), we write
   \[
     \bigcap_{A \in \mathcal{F}} A = \bigcap_{k = 1}^n A_k = A_1 \cap A_2 \cap \dots \cap A_n.
   \]
-  Unions and intersections have been defined in such a way that the associative laws for these operations are automatically satisfied.
+  Unions and intersections have been defined so that the associative laws for these operations are automatically satisfied.
   Hence, there is no ambiguity when we write \(A_1 \cup A_2 \cup \dots \cup A_n\), or \(A_1 \cap A_2 \cap \dots \cap A_n\).
 \end{defn}
